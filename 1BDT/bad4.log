@@ -1,0 +1,101 @@
++run
+Starting program: /u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/bdtBad4 
+[Inferior 1 (process 84620) exited normally]
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-222.sd7.aarch64
++break bdt_client.c:86
+Breakpoint 1 at 0x402ee8: file bdt_client.c, line 86.
++run
+Starting program: /u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/bdtBad4 
+
+Breakpoint 1, main () at bdt_client.c:86
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/bdt_client.c:86:3544:beg:0x402ee8
++s
+BDT_toString () at bdtBad4.c:467
+/u/cos217/Assignment4/bdtBad4.c:467:11643:beg:0x402680
++n
+/u/cos217/Assignment4/bdtBad4.c:468:11694:beg:0x402688
++n
+/u/cos217/Assignment4/bdtBad4.c:470:11719:beg:0x40268c
++n
+/u/cos217/Assignment4/bdtBad4.c:473:11761:beg:0x4026a8
++n
+/u/cos217/Assignment4/bdtBad4.c:474:11793:beg:0x4026bc
++n
+/u/cos217/Assignment4/bdtBad4.c:476:11843:beg:0x4026d4
++n
+/u/cos217/Assignment4/bdtBad4.c:479:11954:beg:0x4026e8
++print totalStrlen
+$1 = 19
++n
+/u/cos217/Assignment4/bdtBad4.c:480:11987:beg:0x4026f4
++print result
+$2 = 0x430220 "0\001C"
++n
+/u/cos217/Assignment4/bdtBad4.c:485:12064:beg:0x402710
++s
+DynArray_map (oDynArray=0x430120, pfApply=0x4025dc <BDT_strcatAccumulate>, pvExtra=0x430220)
+    at dynarray.c:246
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:246:6201:beg:0x40134c
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:247:6231:beg:0x401378
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:248:6259:beg:0x4013a4
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:250:6300:beg:0x4013d4
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:251:6344:beg:0x4013dc
++s
+BDT_strcatAccumulate (str=0x430010 "a", acc=0x430220 "0\001C") at bdtBad4.c:452
+/u/cos217/Assignment4/bdtBad4.c:452:11192:beg:0x4025ec
++print str
+$3 = 0x430010 "a"
++print acc
+$4 = 0x430220 "0\001C"
++n
+/u/cos217/Assignment4/bdtBad4.c:453:11216:beg:0x402618
++n
+/u/cos217/Assignment4/bdtBad4.c:455:11241:beg:0x402644
++n
+/u/cos217/Assignment4/bdtBad4.c:456:11281:beg:0x402670
++n
+DynArray_map (oDynArray=0x430120, pfApply=0x4025dc <BDT_strcatAccumulate>, pvExtra=0x430220)
+    at dynarray.c:250
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:250:6300:beg:0x401400
++print result
+$5 = 0
++print (char *)pvExtra
+$6 = 0x430220 "0\001Ca\n"
++CLEARLY STILL HAS THAT WEIRD START BIT FROM MALLOC
+Undefined command: "CLEARLY".  Try "help".
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:251:6344:beg:0x4013dc
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:250:6300:beg:0x401400
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:251:6344:beg:0x4013dc
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:250:6300:beg:0x401400
++print (char *)pvExtra
+$7 = 0x430220 "0\001Ca\na/b\na/b/c\n"
++STILL THERE
+Undefined command: "STILL".  Try "help".
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:251:6344:beg:0x4013dc
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:250:6300:beg:0x401400
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:252:6409:beg:0x401420
++n
+BDT_toString () at bdtBad4.c:488
+/u/cos217/Assignment4/bdtBad4.c:488:12170:beg:0x402724
++print result
+$8 = 0x430220 "0\001Ca\na/b\na/b/c\na/b/d\n"
++n
+/u/cos217/Assignment4/bdtBad4.c:489:12195:beg:0x40272c
++n
+/u/cos217/Assignment4/bdtBad4.c:490:12213:beg:0x402730
++n
+main () at bdt_client.c:87
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/bdt_client.c:87:3587:beg:0x402f1c
++kill
+Kill the program being debugged? (y or n) +quit

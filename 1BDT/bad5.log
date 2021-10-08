@@ -1,0 +1,110 @@
++run
+Starting program: /u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/bdtBad5 
+
+Program received signal SIGABRT, Aborted.
+0x0000ffffbe5f50e8 in raise () from /lib64/libc.so.6
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-222.sd7.aarch64
++where
+#0  0x0000ffffbe5f50e8 in raise () from /lib64/libc.so.6
+#1  0x0000ffffbe5f6760 in abort () from /lib64/libc.so.6
+#2  0x0000ffffbe5ee5dc in __assert_fail_base () from /lib64/libc.so.6
+#3  0x0000ffffbe5ee694 in __assert_fail () from /lib64/libc.so.6
+#4  0x0000000000402584 in BDT_strlenAccumulate (str=0x0, pAcc=0xfffffffff028) at bdtBad5.c:440
+#5  0x0000000000401400 in DynArray_map (oDynArray=0x430010, 
+    pfApply=0x402544 <BDT_strlenAccumulate>, pvExtra=0xfffffffff028) at dynarray.c:251
+#6  0x00000000004026ec in BDT_toString () at bdtBad5.c:476
+#7  0x000000000040284c in main () at bdt_client.c:31
++break bdt_client.c:31
+Breakpoint 1 at 0x402848: file bdt_client.c, line 31.
++run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) 
+Starting program: /u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/bdtBad5 
+
+Breakpoint 1, main () at bdt_client.c:31
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/bdt_client.c:31:1222:beg:0x402848
++s
+BDT_toString () at bdtBad5.c:467
+/u/cos217/Assignment4/bdtBad5.c:467:11643:beg:0x402680
++n
+/u/cos217/Assignment4/bdtBad5.c:468:11694:beg:0x402688
++n
+/u/cos217/Assignment4/bdtBad5.c:470:11719:beg:0x40268c
++n
+/u/cos217/Assignment4/bdtBad5.c:473:11761:beg:0x4026a8
++print(count)
+$1 = 0
++s
+DynArray_new (uLength=1) at dynarray.c:84
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:84:2239:beg:0x400ab8
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:85:2305:beg:0x400ac4
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:88:2351:beg:0x400ad8
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:89:2384:beg:0x400ae4
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:92:2466:beg:0x400b04
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:95:2540:beg:0x400b10
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:94:2515:beg:0x400b24
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:96:2607:beg:0x400b2c
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:102:2696:beg:0x400b4c
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:103:2717:beg:0x400b50
++n
+BDT_toString () at bdtBad5.c:474
+/u/cos217/Assignment4/bdtBad5.c:474:11795:beg:0x4026c0
++s
+BDT_preOrderTraversal (n=0x0, d=0x430010, i=0) at bdtBad5.c:422
+/u/cos217/Assignment4/bdtBad5.c:422:10315:beg:0x4024b0
++n
+/u/cos217/Assignment4/bdtBad5.c:424:10338:beg:0x4024dc
++print n
+$2 = (Node) 0x0
++n
+/u/cos217/Assignment4/bdtBad5.c:430:10515:beg:0x402538
++n
+/u/cos217/Assignment4/bdtBad5.c:431:10528:beg:0x40253c
++n
+BDT_toString () at bdtBad5.c:476
+/u/cos217/Assignment4/bdtBad5.c:476:11845:beg:0x4026d8
++s
+DynArray_map (oDynArray=0x430010, pfApply=0x402544 <BDT_strlenAccumulate>, pvExtra=0xfffffffff028)
+    at dynarray.c:246
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:246:6201:beg:0x40134c
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:247:6231:beg:0x401378
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:248:6259:beg:0x4013a4
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:250:6300:beg:0x4013d4
++print oDynArray->uLength
+$3 = 1
++print oDynArray-ppvArray[0]
+No symbol "ppvArray" in current context.
++print oDynArray->ppvArray[0]
+$4 = (const void *) 0x0
++n
+/u/intrater/COS217/cos217_assignment4/directoryfiletrees/1BDT/dynarray.c:251:6344:beg:0x4013dc
++s
+BDT_strlenAccumulate (str=0x0, pAcc=0xfffffffff028) at bdtBad5.c:440
+/u/cos217/Assignment4/bdtBad5.c:440:10873:beg:0x402558
++print str
+$5 = 0x0
++n
+
+Program received signal SIGABRT, Aborted.
+0x0000ffffbe5f50e8 in raise () from /lib64/libc.so.6
++n
+Single stepping until exit from function raise,
+which has no line number information.
+
+Program terminated with signal SIGABRT, Aborted.
+The program no longer exists.
++kill
+The program is not being run.
++quit

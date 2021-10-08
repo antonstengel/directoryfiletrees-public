@@ -1,0 +1,27 @@
+We went into the BDT_insertPath function using GDB and saw that they
+did not check if the tree was already initialized. While we cannot
+see the rest of the internal implementation, we assume that they should
+have checked in this function (though it's possible for an alternative
+solution to check in a function and return the INITIALIZATION_ERROR
+back upwards--which is something that was also not done).
+
++run
+Starting program: /u/astengel/assignments/directoryfiletrees/1BDT/bdtBad1 
+
+Program received signal SIGABRT, Aborted.
+0x0000ffffbe5f50e8 in raise () from /lib64/libc.so.6
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-222.sd7.aarch64
++break bdt_client.c:22
+Breakpoint 1 at 0x40272c: file bdt_client.c, line 22.
++run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) 
+Starting program: /u/astengel/assignments/directoryfiletrees/1BDT/bdtBad1 
+
+Breakpoint 1, main () at bdt_client.c:22
+/u/astengel/assignments/directoryfiletrees/1BDT/bdt_client.c:22:814:beg:0x40272c
++step
+BDT_insertPath (path=0x4035f0 "a/b/c") at bdtBad1.c:320
+/u/cos217/Assignment4/bdtBad1.c:320:8155:beg:0x402198
++kill
+Kill the program being debugged? (y or n) +quit
